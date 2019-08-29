@@ -172,9 +172,9 @@
             <script>
             document.write(new Date().getFullYear());
             </script>
-             Put your name(s), student number(s) and group name here. Last modified <?= date ("Y F d  H:i", filemtime($_SERVER['SCRIPT_FILENAME'])); ?>.
+             Junhao Zhang,s3714056 Yat Chun Pun,s3720290 and group name is A2-s3714056-s3720290. Last modified <?= date ("Y F d  H:i", filemtime($_SERVER['SCRIPT_FILENAME'])); ?>.
         </div>
-        <p> Contact Information: <a href="someone@example.com">someone@example.com</a>, 18933344955, 2025 M Street, Northwest, Washington </p>
+        <p> Contact Information: <a href="s3714056@student.rmit.edu.au">s3714056@student.rmit.edu.au</a>, 0431022145, 285 La Trobe St, Melbourne, VIC </p>
         <div>Disclaimer: This website is not a real website and is being developed as part of a School of Science Web Programming course at RMIT University in Melbourne, Australia.</div>
         <div><button id='toggleWireframeCSS' onclick='toggleWireframe()'>Toggle Wireframe CSS</button></div>
     </footer>
