@@ -12,10 +12,12 @@
 </head>
 
 <body>
-    <header class='header-top'>
-        <div>
-            <a id="header-image" href="#"><img src="../../media/cinema-log.jpg"></a> Lunardo
-        </div>
+    <header class='header-top' id="hh">
+        <a id="header-image" href="#"><img src="../../media/logo.png"></a>
+        
+        <div>Lunardo </div>
+    
+
     </header>
     <nav class='nav-top'>
         <ul>
@@ -23,31 +25,35 @@
             <li><a href="#price">Prices</a></li>
             <li><a href="#showing">Showing</a></li>
         </ul>
+        <a href="#hh"><img src="../../media/home.jpg"></a>
     </nav>
     <main>
         <!-- <article id='Website Under Construction'> -->
         <!-- Creative Commons image sourced from https://pixabay.com/en/maintenance-under-construction-2422173/ and used for educational purposes only -->
         <!-- <img src='../../media/website-under-construction.png' alt='Website Under Construction' />
       </article> -->
-        <!-- about us -->
-        <section id="about" class="about-area">
-            <div class="about-text">
-                <h2>About Cinema</h2>
-                <p>The cinema has reopened after extensive improvements and renovations.</p>
-                <p>There are new seats: standard seats and reclinable first class seats.</p>
-                <p>The projection and sound systems are upgraded with 3D Dolby Vision projection and Dolby Atmos
-                    sound. See <a href="https://www.dolby.com/us/en/cinema">https://www.dolby.com/us/en/cinema</a> for more information.</p>
-            </div>
-            <div>
-                <img src="../../media/seat1.jpg">
-                <img src="../../media/seat2.png">
-            </div>
-        </section>
-        <!-- end of about us -->
+
+       <!-- Add -->
+       <section id="newadd" class="newadd-area">
+           <div id="show-movies">
+    <ul id="movie-list">
+        <a href="#showing"><img src="../../media/1.jpg"> </a>
+        <a href="#showing"><img src="../../media/2.jpg"> </a>
+        <a href="#showing"><img src="../../media/3.jpg"> </a>
+        <a href="#showing"><img src="../../media/4.jpg"> </a>
+        <a href="#showing"><img src="../../media/1.jpg"> </a>
+        <!-- <a href="#showing"><img src="../../media/2.jpg"> </a>
+        <a href="#showing"><img src="../../media/3.jpg"> </a>
+        <a href="#showing"><img src="../../media/4.jpg"> </a> -->
+    </ul>
+     <!-- End of Add-->
+       </section>
         <!-- Prices -->
         <section id="price" class="price-area">
+            
+            <div>
             <h2>Prices</h2>
-            <table border=1 width=80% height=80% bordercolor="#f3f3f3">
+            <table>
                 <tr>
                     <td>Seat Type</td>
                     <td>Seat Code</td>
@@ -91,18 +97,26 @@
                     <td>24.00</td>
                 </tr>
             </table>
+            </div>
         </section>
         <!-- end of Prices -->
         <!-- Now Showing -->
         <section id="showing" class="showing-area">
+        <!-- <h2 style="color:white">Showing</h2> -->
             <div class="panel">
                 <img src="../../media/1endgame.jpg">
                 <div class="panel-text">
                     <h4>Avengers: Endgame</h4>
                     <p>Wed - Fri: 9pm (T21)</p>
                     <p>Sat - Sun: 6pm (T18)</p>
-                    <p></p>
+                    <br>
+                    <br>
+                    <p>3h 1min </p>
+                    <p>Action, Adventure, Sci-Fi</p>
+                    <br>
+                    <a href="#synopsis"><button type="button" style="font-size:14pt">Overview</button></a>
                 </div>
+
             </div>
             <div class="panel">
                 <img src="../../media/2wedding.jpg">
@@ -111,6 +125,10 @@
                     <p>Mon - Tue: 6pm (T18)</p>
                     <!-- <p>Wed - Fri: 9pm (T21)</p> -->
                     <p>Sat - Sun: 3pm (T15)</p>
+                    <br>
+                    <br>
+                    <p>1h 53min </p>
+                    <p>Comedy, Romance </p>
                 </div>
             </div>
             <div class="panel">
@@ -120,6 +138,9 @@
                     <p>Mon - Tue: 12pm (T12)</p>
                     <p>Wed - Fri: 6pm (T18)</p>
                     <p>Sat - Sun: 12pm (T12)</p>
+                    <br>
+                    <p>1h 52min </p>
+                    <p>Adventure, Family, Fantasy</p>
                 </div>
             </div>
             <div class="panel">
@@ -129,6 +150,10 @@
                     <!-- <p>Mon - Tue: 6pm (T18)</p> -->
                     <p>Wed - Fri: 12pm (T12)</p>
                     <p>Sat - Sun: 9pm (T21)</p>
+                    <br>
+                    <br>
+                    <p>1h 45min</p>
+                    <p> Biography, Drama</p>
                 </div>
             </div>
         </section>
@@ -136,11 +161,15 @@
         <!-- Synopsis -->
         <section id="synopsis" class="synopsis-area">
             <div class="about-text">
-                <h2>Avengers: Endgame</h2>
+                <h2>Avengers: Endgame &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp PG</h2>
                 <br>
                 <h4>Description</h4>
                 <p>After the devastating events of Avengers: Infinity War (2018), the universe is in ruins. With the help of remaining allies, the Avengers assemble once more in order to reverse Thanos' actions and restore balance to the universe.</p>
                 <p>Directors: Anthony Russo, Joe Russo</p>
+                 <br>
+                 <h4>Make a Booking</h4>
+                <button type="button">Wed - Fri: 9pm (T21)</button>
+                <button type="button">Sat - Sun: 6pm (T18)</button>
             </div>
             <div>
                 <!-- <object>
@@ -150,16 +179,28 @@
                     <source src="../../media/endgame.mp4" type="video/mp4" />
                 </video>
             </div>
-            <div class="booking">
-                <h4>Make a Booking</h4>
-                <button type="button">Wed - Fri: 9pm (T21)</button>
-                <button type="button">Sat - Sun: 6pm (T18)</button>
-            </div>
+            
         </section>
         <!-- end of Synopsis -->
-        <!-- Booking -->
-        <section id="booking" class="about-area">
+         <!-- about us -->
+        <section id="about" class="about-area">
+
             <div class="about-text">
+                <h2>About Cinema</h2>
+                <p>The cinema has reopened after extensive improvements and renovations.</p>
+                <p>There are new seats: standard seats and reclinable first class seats.</p>
+                <p>The projection and sound systems are upgraded with 3D Dolby Vision projection and Dolby Atmos
+                    sound. See <a href="https://www.dolby.com/us/en/cinema">https://www.dolby.com/us/en/cinema</a> for more information.</p>
+            </div>
+            <!-- <div> -->
+                <img src="../../media/seat1.jpg">
+                <img src="../../media/seat2.png">
+            <!-- </div> -->
+        </section>
+        <!-- end of about us -->
+        <!-- Booking -->
+        <section id="booking" class="price-area">
+            <div class="">
                 <h2>Booking</h2>
                 <br>
                 <p>under construction</p>
