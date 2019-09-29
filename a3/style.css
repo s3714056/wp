@@ -1,0 +1,431 @@
+/*编辑整体网站背景等信息*/
+html{
+    scroll-behavior: smooth;
+}
+
+body{
+    width: 90%;
+    margin: 0 auto;
+    background:url('../../media/background.jpg') no-repeat center center fixed;
+    opacity: 0.9;
+}
+
+/*-------------------------------------------------------------------------------*/
+/*编辑全文link的样本*/
+a{
+    text-decoration: none;
+    color: #4169E1;
+}
+
+a:hover{
+    color: red;
+}
+
+a:active{
+    color: green;
+}
+
+
+/*-------------------------------------------------------------------------------*/
+
+/*logo跟busines name*/
+header{
+    background: black;
+    border-bottom: #e8491d 3px solid;
+    padding-top: 20px;
+    position: relative;
+}
+
+/*编辑business name-Lunardo Cinema*/
+header p{
+    font-family: Arial Verdana;
+    font-size: 50px;
+    font-style: italic;
+    font-weight: 800;
+    color: white;
+    letter-spacing: 0.1em;
+    padding: auto 0;
+    margin: auto 0;
+    text-align: center;
+}
+
+/*编辑logo*/
+.logo{
+    padding: 40px;
+    width: 50px;
+}
+
+/*-------------------------------------------------------------------------------*/
+
+/*编辑nav部分*/
+.mainNavBar{
+    position: sticky;
+    top: 0;
+}
+
+nav{
+    width: 100%;
+    height: 50px;
+    float: left;
+    background: rgba(0,0,0,.8);
+    border-top: 1px solid rgba(255, 255, 255, .2);
+    border-bottom: 1px solid rgba(255, 255, 255, .2);
+}
+
+nav ul{
+    display: flex;
+    margin: 0;
+    padding: 0 100px;
+    float: right;
+}
+
+nav ul li{
+    list-style: none;
+    margin:0 20px 0 20px;
+    padding-top: 0 20px 0 20px;
+    display: inline-block;
+}
+
+nav ul li a{
+    display: block;
+    padding: 0 20px;
+    font-size: 15px;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-weight: bold;
+    line-height: 50px;
+}
+
+nav ul li a:hover,
+nav ul li a.active{
+    background-color: gold;
+    transition: 0.7s;
+}
+/*-------------------------------------------------------------------------------*/
+
+/* 编辑main部分*/
+
+/*about us 部分*/
+.notification{
+    margin-top: 80px;
+    text-align: center;
+    font-family: Barlow Semi Condensed,sans-serif;
+    font-size: 25px;
+    font-weight: 600;
+    color: aqua;
+    text-shadow: 0 0 2px #35353b;
+}
+
+/*编辑Dance Tune Zone!标题*/
+.notification h1{
+    color: firebrick;
+    margin: auto 0;
+    padding-top: 10px;
+    text-align: center;
+}
+
+/*chair 排版*/
+#upgrade{
+    margin-top: 10px;
+}
+
+#upgrade .chair{
+    width: 100%;
+    padding: 10px;
+    background-image: url('../../media/sofa.jpg');
+    background-position: center;
+    background-attachment: fixed;
+    background-size: cover;
+}
+
+#upgrade .chair img{
+    width: 300px;
+    height: 200px;
+}
+
+.chair h1{
+    text-align: center;
+    font-family: "Beaufort for LOL";
+    font-weight: 400;
+    font-style: normal;
+    color: khaki;
+    font-size: 30px;
+    margin-bottom: 0;
+    text-transform: uppercase;
+    text-shadow: 2px 2px 3px #FF0000;
+}
+
+.chair p{
+    color: whitesmoke;
+    font-size: 18px;
+    text-align: left;
+}
+
+.chair h2{
+    color: black;
+    display: inline-block;
+    text-decoration: underline;
+}
+/*----------------------------------------------------------------------------*/
+.soundSystem{
+    width: 99.3%;
+    background-color: gray;
+    color: whitesmoke;
+    font-size: 18px;
+    text-align: left;
+    padding-left: 30px;
+}
+
+.button{
+    color: snow;
+    font-weight: 500;
+    font-size: 15px;
+}
+
+/*----------------------------------------------------------------------------*/
+/*价位表*/
+#prices{
+    padding: 20px;
+    width: 98.7%;
+    background-image: url('../../media/tablebackground.jpg');
+    background-position: center;
+    background-attachment: fixed;
+    background-size: cover;
+}
+
+.prices h1{
+    font-weight: 600;
+    font-style: normal;
+    font-size: 50px;
+    display: inline;
+    color: aquamarine;
+}
+
+.prices p{
+    display: inline;
+    font-family: "Beaufort for LOL";
+    font-weight: 400;
+    font-style: normal;
+    color: aquamarine;
+    font-size: 30px;
+    /* margin-bottom: 0; */
+    text-transform: uppercase;
+    text-align: center;
+}
+/*----------------------------------------------------------------------------*/
+/* table 编辑*/
+.prices table{
+    margin: 20px;
+    width: 95%;
+}
+
+.prices th{
+    margin-top: 100px;
+    text-align: center;
+}
+
+.prices table, th{
+    border:1px solid #000;
+    border-collapse: collapse;
+    opacity: 0.8;
+    color: black;
+    font-weight:bolder;
+}
+
+.prices th{
+    padding: 5px;
+}
+
+/*设置表格的背景颜色*/
+.prices tr:nth-child(even){
+    background-color: royalblue;
+}
+
+.prices tr:nth-child(odd){
+    background-color: #FAEBD7;
+}
+
+/*----------------------------------------------------------------------------*/
+/*showing 部分*/
+#showing{
+    background-image: url('../../media/postBackgroud.jpg');
+    background-position: center;
+    background-attachment: fixed;
+    background-size: cover;
+    color: black;
+    padding: 20px;
+    margin: auto;
+    width: auto;
+}
+
+#showing h1{
+    font-family: "Beaufort for LOL";
+    font-weight: 400;
+    font-style: normal;
+    color: whitesmoke;
+    font-size: 30px;
+    margin-bottom: 0;
+    text-transform: uppercase;
+    text-align: center;
+}
+
+/*timetable 的背景区分*/
+.post p:nth-child(even){
+    background-color: gray;
+}
+
+.post p:nth-child(odd){
+    background-color: royalblue;
+}
+/*-------------------------------------------------------------------------*/
+/*post 排版*/
+.nowShowingParts {
+  display: flex;
+
+}
+
+.posts{
+  display: flex;
+  width: 48%;
+  border: 1px solid #000;
+  height: 500px;
+  margin: 10px auto;
+  min-width: 48%;
+}
+.post {
+  background: #DC143C;
+  display: block;
+  border: 1px solid #000;
+  height: 450px;
+  width: 80%;
+  margin: 10px;
+  text-decoration: underline;
+  font-weight: bolder;
+}
+
+.post img{
+  width:80%;
+  padding-top: 20px;
+  padding-left: 20px;
+}
+/*-------------------------------------------------------------------------*/
+/*Synopsis 部分*/
+#SynopsisAndBooking{
+    background-image: url('../../media/introduction.jpg');
+    background-position: center;
+    background-size: cover;
+    background-attachment: fixed;
+    color: white;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-gap: 8em;
+    width: 100%;
+    height: 100%;
+    margin: 0 auto;
+    padding-left: 30px;
+    /* padding-top: 20px; */
+}
+
+.synopsisArea{
+    padding-left: 20px;
+    display: flex;
+}
+
+.synopsisArea{
+    display: inline;
+}
+
+.synopsisArea p{
+    text-decoration: underline;
+    width: 100%;
+    font-weight: 900;
+}
+/*-------------------------------------------------------------------------------*/
+/*video 部分*/
+.video{
+    display: block;
+    margin-top: 20px;
+    padding: 0 auto;
+    width: 560px;
+    /* width: 50%; */
+}
+
+iframe{
+    width: 150%;
+}
+/*-------------------------------------------------------------------------------*/
+/*button 部分*/
+.bookingArea{
+    display: block;
+    width: 80%;
+}
+
+.button{
+    width: 60%;
+    display: inline-block;
+    height: 90px;
+    margin-bottom: 20px;
+}
+/*-------------------------------------------------------------------------------*/
+/*编辑footer部分*/
+footer{
+    margin-top: 20px;
+    margin-bottom: 20px;
+    color:khaki;
+    text-align: center;
+}
+
+/*-------------------------------------------------------------------------------*/
+/* form */
+.form {
+    width: auto;
+    margin: 20px auto;
+    display: none;
+    padding: 10px 250px 10px 150px;
+    border: 1px solid white;
+    color: black;
+    background: white;
+}
+.form-content {
+    text-align: right;
+}
+.form-content > select {
+    width: 100px;
+    margin: 5px 0px;
+}
+.wrapper {
+    display: flex;
+    justify-content: space-between;
+}
+.left {
+    width: 300px;
+}
+.right {
+    width: 300px;
+    position: relative;
+    padding-top: 50px;
+}
+.right > .form-content {
+    margin: 5px 0px;
+}
+.right > .form-content > input {
+    width: 150px;
+}
+.move {
+    padding: 10px 20px;
+}
+#total {
+    width: 100px;
+    display: inline-block;
+    border: 1px dashed black;
+    border-radius: 5px;
+}
+.move-order {
+    position: absolute;
+    bottom: 20px;
+    right: 0;
+}
+
+
+
+
