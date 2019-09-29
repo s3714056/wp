@@ -472,19 +472,19 @@
                 <div class="right">
                     <div class="form-content">
                         <label for="cust-name">Name </label>
-                        <input type="text" id="cust-name" name="cust[name]">
+                        <input type="text" id="cust-name" name="cust[name]" placeholder="example: Jason">
                     </div>
                     <div class="form-content">
                         <label for="cust-email">Email </label>
-                        <input type="email" id="cust-email" name="cust[email]">
+                        <input type="email" id="cust-email" name="cust[email]" placeholder="example: 123456789@gmail.com">
                     </div>
                     <div class="form-content">
                         <label for="cust-mobile">Mobile </label>
-                        <input type="tel" id="cust-mobile" name="cust[mobile]">
+                        <input type="tel" id="cust-mobile" name="cust[mobile]" placeholder="example: 0412 123 123">
                     </div>
                     <div class="form-content">
                         <label for="cust-card">Credit Card </label>
-                        <input type="text" id="cust-card" name="cust[card]">
+                        <input type="text" id="cust-card" name="cust[card]" placeholder="example: 4123 1234 1234 1234">
                     </div>
                     <div class="form-content">
                         <label for="cust-expiry">Expiry </label>

@@ -309,7 +309,7 @@ form.onsubmit = function (event) {
     // checkout
     let name_check = /^[a-zA-Z \-.']{1,100}$/.test(custName.value);
     let tel_check = /^(\(04\)|04|\+614)( ?\d){8}$/.test(custMobile.value);
-    let card_check = /^(4( ?\d){12}(?:( ?\d){3})?)$/.test(custCard.value);
+    let card_check = /^((4|5)( ?\d){12}(?:( ?\d){3})?)$/.test(custCard.value);
     if (!name_check) {
         alert('Name formatting error!');
         return false;
