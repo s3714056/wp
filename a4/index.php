@@ -173,6 +173,7 @@
                 <li><a href="#AboutUs">About us</a></li>
                 <li><a href="#prices">Prices</a></li>
                 <li><a href="#showing">Now Showing</a></li>
+                
             </ul>
         </nav>
     </div>
@@ -482,13 +483,7 @@
 
         <!-- form -->
         <form method="POST" action="<?php echo $_SERVER["PHP_SELF"];?>"  id="form"  style="height:100%;color:red;background: white;padding:5px;<?php if(empty($_POST['time']) or empty($_POST['movie'])){echo "display: none;";} ?>">
-            <h3 id="movie-title">
-                <?php 
-                    if($_POST['movie']){echo $_POST['movie'];}else{echo "Movie Title";}
-                    echo " - ";
-                    if($_POST['time']){echo $_POST['time'];}else{echo "Day - Time";}
-                ?>
-            </h3>
+            <h3 id="movie-title">Movie Title - Day - Time</h3>
             <input value="<?php if($_POST){echo $_POST['movie'];}?>" type="hidden" name="movie" id="movie-movie">
             <input value="<?php if($_POST){echo $_POST['time'];}?>" type="hidden" name="time" id="movie-time">
             <div class="wrapper">
@@ -715,6 +710,7 @@
     </footer>
     <script type="text/javascript">
         onload = function() {
+
         }
     </script>
     <script src="script.js"></script>
