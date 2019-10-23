@@ -1,5 +1,6 @@
 <?php
     session_start();
+    error_reporting(E_ALL^E_NOTICE);
     $index=1;
     $timeList=["","Monday - 12pm","Tuesday - 12pm","Wednesday - 6pm","Saturday - 12pm","Sunday - 12pm"];
     $movieList=["","Avengers: Endgame","Top End Wedding","Dumbo","The Happy Prince"];
@@ -29,7 +30,7 @@
               echo "$key : $value <br>";
             }
             */
-            if (in_array( $time,["Monday - 12pm","Tuesday - 12pm","Wednesday - 6pm","Saturday - 12pm","Sunday - 12pm"])){
+            if (in_array( $time,["Monday - 6pm","Monday - 12pm","Tuesday - 12pm","Wednesday - 12pm","Wednesday - 9pm","Wednesday - 6pm","Saturday - 12pm","Sunday - 12pm","Monday - 12pm","Thursday - 12pm","Friday - 12pm"])){
                 $index=0;
             }
             $total+= $prices['STA'][$index]*$_SESSION['STA'];
