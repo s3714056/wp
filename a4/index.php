@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="Finishing the assignment 2 alone is really hard work, but I indeed learnt a lot.">
     <meta name="keywords" content="HTML & CSS work, cinema information">
-    <title>Assignment 4-Index</title>
+    <title>Assignment 4</title>
 
     <!-- Keep wireframe.css for debugging, add your css to style.css -->
     <link id='wireframecss' type="text/css" rel="stylesheet" href="wireframe.css" disabled>
@@ -20,7 +20,7 @@
     <?php
         //session_start();
         include 'tools.php';
-     
+        debug();
         if (!empty($_POST)){
             //debug module 
             //check
@@ -140,7 +140,9 @@
             
             header( "Location: receipt.php" );
         }else{
-            alert("You have not completed the Information Form!");
+            if(!empty($_POST)){
+                alert("You have not completed the Information Form!");
+            }
             /*
             if(isset($_SESSION['count']))
             {
@@ -171,7 +173,6 @@
                 <li><a href="#AboutUs">About us</a></li>
                 <li><a href="#prices">Prices</a></li>
                 <li><a href="#showing">Now Showing</a></li>
-                <li><a href="#booking">Now Booking</a></li>
             </ul>
         </nav>
     </div>
@@ -360,255 +361,330 @@
             </div>
             <br>
         </article>
-        <br>
-        <article id="booking">
-            <h1 style='color: whitesmoke;text-align: center;font-family: "Beaufort for LOL";font-weight: 400;font-size: 30px;'>Now Booking...</h1>
-            <hr>
-            <!-- form -->
-            <div>
-                <form method="POST" action="<?php echo $_SERVER["PHP_SELF"];?>" style="height:100%;color:red">
-              
-                <div class="wrapper">
-                    <div class="left">
-                        <fieldset>
-                            <legend>Movie & Time</legend>
-                            <!-- Movie -->
-                            <div class="form-content">
-                                <label for="choose-movie">Movie </label>
-                                <select id="choose-movie" name="movie" >
-                                    <?php
-                                        foreach ($movieList as $movie) {
-                                            $item="<option value=\"". strval($movie)."\" ";
-                                            $postVal="";
-                                            $postVal=$_POST["movie"];
-                                            if(strval($postVal)==strval($movie)){
-                                                    $item=$item." selected "; 
-                                            }  
-                                            if($movie==""){
-                                                $item=$item." >"."Please Select Time"."</option>";
-                                            }else{  
-                                                $item=$item." >".strval($movie)."</option>";
-                                            }
-                                            echo $item;
-                                        }
-                                    ?>
-                                </select>
-                                <span class="error">* <?php echo $movieErr;?></span>
-                            </div>
-
-                            <!-- Time -->
-                            <div class="form-content">
-                                <label for="choose-time">Time </label>
-                                <select id="choose-time" name="time">
-                                    <?php
-                                        foreach ($timeList as $time) {
-                                            $item="<option value=\"". strval($time)."\" ";
-                                            $postVal="";
-                                            $postVal=$_POST["time"];
-                                            if(strval($postVal)==strval($time)){
-                                                    $item=$item." selected "; 
-                                            }  
-                                            if($time==""){
-                                                $item=$item." >"."Please Select Time"."</option>";
-                                            }else{  
-                                                $item=$item." >".strval($time)."</option>";
-                                            }
-                                            echo $item;
-                                        }
-                                    ?>
-                                </select>
-                                <span class="error">* <?php echo $timeErr;?></span>
-                            </div>
-                        </fieldset>
-                        <fieldset>
-                            <legend>Ticket-Standard</legend>
-
-                            <!-- Adults -->
-                            <div class="form-content">
-                                <label for="seats-STA">Adults </label>
-                                <select id="seats-STA" name="STA">
-                                    <?php
-                                        for ($i=0; $i<=10; $i++)
-                                        {
-                                            
-                                            $item="<option value=\"". strval($i)."\" ";
-                                            $postVal="";
-                                            $postVal=$_POST["STA"];
-                                            if(empty($postVal)){
-                                                $postVal="0";
-                                            }
-                                            if(strval($postVal)==strval($i)){
-                                                $item=$item." selected ";
-                                            }
-                                            $item=$item." >".strval($i)."</option>";
-                                            echo $item;
-                                        }
-                                    ?>
-                                </select>
-                            </div>
-
-                            <!-- Concession -->
-                            <div class="form-content">
-                                <label for="seats-STP">Concession </label>
-                                <select id="seats-STP" name="STP">
-                                    <?php
-                                        for ($i=0; $i<=10; $i++)
-                                        {
-                                            
-                                            $item="<option value=\"". strval($i)."\" ";
-                                            $postVal="";
-                                            $postVal=$_POST["STP"];
-                                            if(empty($postVal)){
-                                                $postVal="0";
-                                            }
-                                            if(strval($postVal)==strval($i)){
-                                                $item=$item." selected ";
-                                            }
-                                            $item=$item." >".strval($i)."</option>";
-                                            echo $item;
-                                        }
-                                    ?>
-                                </select>
-                            </div>
-
-                            <!-- children -->
-                            <div class="form-content">
-                                <label for="seats-STC">Children </label>
-                                <select id="seats-STC" name="STC">
-                                    <?php
-                                        for ($i=0; $i<=10; $i++)
-                                        {
-                                            
-                                            $item="<option value=\"". strval($i)."\" ";
-                                            $postVal="";
-                                            $postVal=$_POST["STC"];
-                                            if(empty($postVal)){
-                                                $postVal="0";
-                                            }
-                                            if(strval($postVal)==strval($i)){
-                                                $item=$item." selected ";
-                                            }
-                                            $item=$item." >".strval($i)."</option>";
-                                            echo $item;
-                                        }
-                                    ?>
-                                </select>
-                            </div>
-                            <span class="error"><?php echo $ticketErr;?></span>
-                        </fieldset>
-                        <fieldset>
-                            <legend>Ticket-First Class</legend>
-
-                            <!-- Adults -->
-                            <div class="form-content">
-                                <label for="seats-FCA">Adults </label>
-                                <select id="seats-FCA" name="FCA">
-                                    <?php
-                                        for ($i=0; $i<=10; $i++)
-                                        {
-                                            
-                                            $item="<option value=\"". strval($i)."\" ";
-                                            $postVal="";
-                                            $postVal=$_POST["FCA"];
-                                            if(empty($postVal)){
-                                                $postVal="0";
-                                            }
-                                            if(strval($postVal)==strval($i)){
-                                                $item=$item." selected ";
-                                            }
-                                            $item=$item." >".strval($i)."</option>";
-                                            echo $item;
-                                        }
-                                    ?>
-                                </select>
-                            </div>
-
-                            <!-- Concession -->
-                            <div class="form-content">
-                                <label for="seats-FCP">Concession </label>
-                                <select id="seats-FCP" name="FCP">
-                                    <?php
-                                        for ($i=0; $i<=10; $i++)
-                                        {
-                                            
-                                            $item="<option value=\"". strval($i)."\" ";
-                                            $postVal="";
-                                            $postVal=$_POST["FCP"];
-                                            if(empty($postVal)){
-                                                $postVal="0";
-                                            }
-                                            if(strval($postVal)==strval($i)){
-                                                $item=$item." selected ";
-                                            }
-                                            $item=$item." >".strval($i)."</option>";
-                                            echo $item;
-                                        }
-                                    ?>
-                                </select>
-                            </div>
-
-                            <!-- children -->
-                            <div class="form-content">
-                                <label for="seats-FCC">Children </label>
-                                <select id="seats-FCC" name="FCC">
-                                    <?php
-                                        for ($i=0; $i<=10; $i++)
-                                        {
-                                            
-                                            $item="<option value=\"". strval($i)."\" ";
-                                            $postVal="";
-                                            $postVal=$_POST["FCC"];
-                                            if(empty($postVal)){
-                                                $postVal="0";
-                                            }
-                                            if(strval($postVal)==strval($i)){
-                                                $item=$item." selected ";
-                                            }
-                                            $item=$item." >".strval($i)."</option>";
-                                            echo $item;
-                                        }
-                                    ?>
-                                </select>
-                            </div>
-                            <span class="error"><?php echo $ticketErr;?></span>
-                        </fieldset>
-
-                    </div>
-                    <div class="right">
-                        <div class="form-content">
-                            <label for="cust-name">Name </label>
-                            <input type="text" id="cust-name" name="name" placeholder="eg: Jason" value="<?php echo $name ?>">
-                            <span class="error">* <?php echo $nameErr;?></span>
-                        </div>
-                        <div class="form-content">
-                            <label for="cust-email">Email </label>
-                            <input type="email" id="cust-email" name="email" placeholder="eg: 123456789@gmail.com" value="<?php echo $email ?>">
-                            <span class="error">* <?php echo $emailErr;?></span>
-                        </div>
-                        <div class="form-content">
-                            <label for="cust-mobile">Mobile </label>
-                            <input type="tel" id="cust-mobile" name="mobile" placeholder="eg: 0412 123 123" value="<?php echo $mobile ?>">
-                            <span class="error">* <?php echo $mobileErr;?></span>
-                        </div>
-                        <div class="form-content">
-                            <label for="cust-card">Credit Card </label>
-                            <input type="text" id="cust-card" name="card" placeholder="eg: 4123 1234 1234 1234" value="<?php echo $card ?>">
-                            <span class="error">* <?php echo $cardErr;?></span>
-                        </div>
-                        <div class="form-content">
-                            <label for="cust-expiry">Expiry </label>
-                            <input type="month" id="cust-expiry" name="expiry" value="<?php echo $expiry ?>">
-                            <span class="error">* <?php echo $expiryErr;?></span>
-                        </div>
-                        <div class="form-content move-order">
-                            <button type="submit" name="submit" value="Submit">Order</button>
-                        </div>
+      
+        <!--Synopsis Area-->
+        <article id="SynopsisAndBooking">
+            <div id="synopsisACT" style="<?php if($_POST['movie']=="Avengers: Endgame"){echo "display: block;";}else{echo "display: none;";}?>">
+                <div class="synopsisAreas">
+                    <h1>Synopsis</h1>
+                    <div class="synopsisArea">
+                        <h2>Avengers: Endgame</h2>
+                        <p>Adrift in space with no food or water, Tony Stark sends a message to Pepper Potts as his
+                            oxygen supply starts to dwindle. Meanwhile, the remaining Avengers -- Thor, Black Widow,
+                            Captain America and Bruce Banner -- must figure out a way to bring back their vanquished
+                            allies for an epic showdown with Thanos -- the evil demigod who decimated the planet and the
+                            universe.</p>
                     </div>
                 </div>
-            </form>
-            </div>
 
+                <!-- video-->
+                <div class="video">
+                    <iframe width="560" height="315" src="https://www.youtube.com/embed/TcMBFSGVi1c" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                </div>
+
+                <div calss="bookingArea">
+                    <h1>Booking it now!</h1>
+                    <div class="button" id="bookingACT">
+                        <button>Wednesday - 9pm</button>
+                        <button>Thursday - 9pm</button>
+                        <button>Friday - 9pm</button>
+                        <button>Saturday - 6pm</button>
+                        <button>Sunday - 6pm</button>
+                    </div>
+                </div>
+            </div>
+            <!-- <br> -->
+
+            <div id="synopsisAHF" style="<?php if($_POST['movie']=="Top End Wedding"){echo "display: block;";}else{echo "display: none;";}?>">
+                <!-- Top End Wedding -->
+                <div class="synopsisArea">
+                    <h2>Top End Wedding</h2>
+                    <p>Lauren and Ned have 10 days to find Lauren's mother who has gone AWOL in the remote far north of
+                        Australia so that they can reunite her parents and pull off their dream wedding.</p>
+                </div>
+
+                <!-- video-->
+                <div class="video">
+                    <iframe width="560" height="315" src="https://www.youtube.com/embed/uoDBvGF9pPU" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                </div>
+
+                <div calss="bookingArea">
+                    <h1>Booking it now!</h1>
+                    <div class="button" id="bookingAHF">
+                        <button>Monday - 6pm</button>
+                        <button>Tuesday - 6pm</button>
+                        <button>Saturday - 3pm</button>
+                        <button>Sunday - 3pm</button>
+                    </div>
+                </div>
+            </div>
+            <!-- <br> -->
+
+            <div id="synopsisANM" style="<?php if($_POST['movie']=="Dumbo"){echo "display: block;";}else{echo "display: none;";}?>">
+                <!-- Dumbo -->
+                <div class="synopsisArea">
+                    <h2>Dumbo</h2>
+                    <p>Struggling circus owner Max Medici enlists a former star and his two children to care for Dumbo,
+                        a baby elephant born with oversized ears. When the family discovers that the animal can fly, it
+                        soon becomes the main attraction -- bringing in huge audiences and revitalizing the run-down
+                        circus. The elephant's magical ability also draws the attention of V.A. Vandevere, an
+                        entrepreneur who wants to showcase Dumbo in his latest, larger-than-life entertainment venture.
+                    </p>
+                </div>
+
+                <!-- video-->
+                <div class="video">
+                    <iframe width="560" height="315" src="https://www.youtube.com/embed/7NiYVoqBt-8" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                </div>
+
+                <div calss="bookingArea">
+                    <h1>Booking it now!</h1>
+                    <div class="button" id="bookingANM">
+                        <button>Monday - 12pm</button>
+                        <button>Tuesday - 12pm</button>
+                        <button>Wednesday - 6pm</button>
+                        <button>Thursday - 6pm</button>
+                        <button>Friday - 6pm</button>
+                        <button>Saturday - 12pm</button>
+                        <button>Sunday - 12pm</button>
+                    </div>
+                </div>
+            </div>
+            <!-- <br> -->
+
+            <div id="synopsisRMC" style="<?php if($_POST['movie']=="The Happy Prince"){echo "display: block;";}else{echo "display: none;";}?>">
+                <!-- The Happy Prince -->
+                <div class="synopsisArea">
+                    <h2>The Happy Prince</h2>
+                    <p>His body ailing, Oscar Wilde lives out his last days in exile, observing the difficulties and
+                        failures surrounding him with ironic detachment, humour, and the wit that defined his life.</p>
+                </div>
+
+                <!-- video-->
+                <div class="video">
+                    <iframe width="560" height="315" src="https://www.youtube.com/embed/4HmN9r1Fcr8" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                </div>
+
+
+                <!--Booking Area-->
+                <div calss="bookingArea">
+                    <h1>Booking it now!</h1>
+                    <div class="button" id="bookingRMC">
+                        <button>Wednesday - 12pm</button>
+                        <button>Thursday - 12pm</button>
+                        <button>Friday - 12pm</button>
+                        <button>Saturday - 9pm</button>
+                        <button>Sunday - 9pm</button>
+                    </div>
+                </div>
+            </div>
         </article>
+
+        <!-- form -->
+        <form method="POST" action="<?php echo $_SERVER["PHP_SELF"];?>"  id="form"  style="height:100%;color:red;background: white;padding:5px;<?php if(empty($_POST['time']) or empty($_POST['movie'])){echo "display: none;";} ?>">
+            <h3 id="movie-title">
+                <?php 
+                    if($_POST['movie']){echo $_POST['movie'];}else{echo "Movie Title";}
+                    echo " - ";
+                    if($_POST['time']){echo $_POST['time'];}else{echo "Day - Time";}
+                ?>
+            </h3>
+            <input value="<?php if($_POST){echo $_POST['movie'];}?>" type="hidden" name="movie" id="movie-movie">
+            <input value="<?php if($_POST){echo $_POST['time'];}?>" type="hidden" name="time" id="movie-time">
+            <div class="wrapper">
+                <div class="left">
+                    <fieldset>
+                        <legend>Ticket-Standard</legend>
+
+                        <!-- Adults -->
+                        <div class="form-content">
+                            <label for="seats-STA">Adults </label>
+                            <select id="seats-STA" name="STA">
+                                <?php
+                                    for ($i=0; $i<=10; $i++)
+                                    {
+                                        
+                                        $item="<option value=\"". strval($i)."\" ";
+                                        $postVal="";
+                                        $postVal=$_POST["STA"];
+                                        if(empty($postVal)){
+                                            $postVal="0";
+                                        }
+                                        if(strval($postVal)==strval($i)){
+                                            $item=$item." selected ";
+                                        }
+                                        $item=$item." >".strval($i)."</option>";
+                                        echo $item;
+                                    }
+                                ?>
+                            </select>
+                        </div>
+
+                        <!-- Concession -->
+                        <div class="form-content">
+                            <label for="seats-STP">Concession </label>
+                            <select id="seats-STP" name="STP">
+                                <?php
+                                    for ($i=0; $i<=10; $i++)
+                                    {
+                                        
+                                        $item="<option value=\"". strval($i)."\" ";
+                                        $postVal="";
+                                        $postVal=$_POST["STP"];
+                                        if(empty($postVal)){
+                                            $postVal="0";
+                                        }
+                                        if(strval($postVal)==strval($i)){
+                                            $item=$item." selected ";
+                                        }
+                                        $item=$item." >".strval($i)."</option>";
+                                        echo $item;
+                                    }
+                                ?>
+                            </select>
+                        </div>
+
+                        <!-- children -->
+                        <div class="form-content">
+                            <label for="seats-STC">Children </label>
+                            <select id="seats-STC" name="STC">
+                                <?php
+                                    for ($i=0; $i<=10; $i++)
+                                    {
+                                        
+                                        $item="<option value=\"". strval($i)."\" ";
+                                        $postVal="";
+                                        $postVal=$_POST["STC"];
+                                        if(empty($postVal)){
+                                            $postVal="0";
+                                        }
+                                        if(strval($postVal)==strval($i)){
+                                            $item=$item." selected ";
+                                        }
+                                        $item=$item." >".strval($i)."</option>";
+                                        echo $item;
+                                    }
+                                ?>
+                            </select>
+                        </div>
+                        <span class="error"><?php echo $ticketErr;?></span>
+                    </fieldset>
+                    <fieldset>
+                        <legend>Ticket-First Class</legend>
+
+                        <!-- Adults -->
+                        <div class="form-content">
+                            <label for="seats-FCA">Adults </label>
+                            <select id="seats-FCA" name="FCA">
+                                <?php
+                                    for ($i=0; $i<=10; $i++)
+                                    {
+                                        
+                                        $item="<option value=\"". strval($i)."\" ";
+                                        $postVal="";
+                                        $postVal=$_POST["FCA"];
+                                        if(empty($postVal)){
+                                            $postVal="0";
+                                        }
+                                        if(strval($postVal)==strval($i)){
+                                            $item=$item." selected ";
+                                        }
+                                        $item=$item." >".strval($i)."</option>";
+                                        echo $item;
+                                    }
+                                ?>
+                            </select>
+                        </div>
+
+                        <!-- Concession -->
+                        <div class="form-content">
+                            <label for="seats-FCP">Concession </label>
+                            <select id="seats-FCP" name="FCP">
+                                <?php
+                                    for ($i=0; $i<=10; $i++)
+                                    {
+                                        
+                                        $item="<option value=\"". strval($i)."\" ";
+                                        $postVal="";
+                                        $postVal=$_POST["FCP"];
+                                        if(empty($postVal)){
+                                            $postVal="0";
+                                        }
+                                        if(strval($postVal)==strval($i)){
+                                            $item=$item." selected ";
+                                        }
+                                        $item=$item." >".strval($i)."</option>";
+                                        echo $item;
+                                    }
+                                ?>
+                            </select>
+                        </div>
+
+                        <!-- children -->
+                        <div class="form-content">
+                            <label for="seats-FCC">Children </label>
+                            <select id="seats-FCC" name="FCC">
+                                <?php
+                                    for ($i=0; $i<=10; $i++)
+                                    {
+                                        
+                                        $item="<option value=\"". strval($i)."\" ";
+                                        $postVal="";
+                                        $postVal=$_POST["FCC"];
+                                        if(empty($postVal)){
+                                            $postVal="0";
+                                        }
+                                        if(strval($postVal)==strval($i)){
+                                            $item=$item." selected ";
+                                        }
+                                        $item=$item." >".strval($i)."</option>";
+                                        echo $item;
+                                    }
+                                ?>
+                            </select>
+                        </div>
+                        <span class="error"><?php echo $ticketErr;?></span>
+                    </fieldset>
+                    <div class="form-content move">
+                        <label for="total">Total $ </label>
+                        <div id="total">0</div>
+                    </div>
+
+                </div>
+                <div class="right">
+                    <div class="form-content">
+                        <label for="cust-name">Name </label>
+                        <input type="text" id="cust-name" name="name" placeholder="eg: Jason" value="<?php echo $name ?>">
+                        <span class="error">* <?php echo $nameErr;?></span>
+                    </div>
+                    <div class="form-content">
+                        <label for="cust-email">Email </label>
+                        <input type="email" id="cust-email" name="email" placeholder="eg: 123456789@gmail.com" value="<?php echo $email ?>">
+                        <span class="error">* <?php echo $emailErr;?></span>
+                    </div>
+                    <div class="form-content">
+                        <label for="cust-mobile">Mobile </label>
+                        <input type="tel" id="cust-mobile" name="mobile" placeholder="eg: 0412 123 123" value="<?php echo $mobile ?>">
+                        <span class="error">* <?php echo $mobileErr;?></span>
+                    </div>
+                    <div class="form-content">
+                        <label for="cust-card">Credit Card </label>
+                        <input type="text" id="cust-card" name="card" placeholder="eg: 4123 1234 1234 1234" value="<?php echo $card ?>">
+                        <span class="error">* <?php echo $cardErr;?></span>
+                    </div>
+                    <div class="form-content">
+                        <label for="cust-expiry">Expiry </label>
+                        <input type="month" id="cust-expiry" name="expiry" value="<?php echo $expiry ?>">
+                        <span class="error">* <?php echo $expiryErr;?></span>
+                    </div>
+                    <div class="form-content">
+                        <button type="submit" name="submit" value="Submit">Order</button>
+                    </div>
+                </div>
+            </div>
+        </form>
+        
+
 
     </main>
     <div >
@@ -639,10 +715,9 @@
     </footer>
     <script type="text/javascript">
         onload = function() {
-
         }
     </script>
-
+    <script src="script.js"></script>
 </body>
 
 </html>
