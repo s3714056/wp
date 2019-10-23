@@ -6,7 +6,7 @@ html{
 body{
     width: 90%;
     margin: 0 auto;
-    background:url('background.jpg') no-repeat center center fixed;
+    background:url('../../media/background.jpg') no-repeat center center fixed;
     opacity: 0.9;
 }
 
@@ -256,7 +256,7 @@ nav ul li a.active{
 /*----------------------------------------------------------------------------*/
 /*showing 部分*/
 #showing{
-    background-image: url('postBackgroud.jpg');
+    background-image: url('../../media/postBackgroud.jpg');
     background-position: center;
     background-attachment: fixed;
     background-size: cover;
@@ -340,7 +340,7 @@ nav ul li a.active{
 /*-------------------------------------------------------------------------*/
 /*Synopsis 部分*/
 #SynopsisAndBooking{
-    background-image: url('introduction.jpg');
+    background-image: url('../../media/introduction.jpg');
     background-position: center;
     background-size: cover;
     background-attachment: fixed;
@@ -355,7 +355,7 @@ nav ul li a.active{
     /* padding-top: 20px; */
 }
 #SynopsisAndBooking2{
-    background-image: url('introduction.jpg');
+    background-image: url('../../media/introduction.jpg');
     background-position: center;
     background-size: cover;
     background-attachment: fixed;
