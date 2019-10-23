@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="Finishing the assignment 2 alone is really hard work, but I indeed learnt a lot.">
     <meta name="keywords" content="HTML & CSS work, cinema information">
-    <title>Assignment 4-Receipt</title>
+    <title>Assignment 4</title>
 
     <!-- Keep wireframe.css for debugging, add your css to style.css -->
     <link id='wireframecss' type="text/css" rel="stylesheet" href="../wireframe.css" disabled>
@@ -41,7 +41,7 @@
                     echo $num;
                 }
                 $time=$_SESSION['time'];
-                if (in_array( $time,["Monday - 12pm","Tuesday - 12pm","Wednesday - 6pm","Saturday - 12pm","Sunday - 12pm"])){
+                if (in_array( $time,["Monday - 6pm","Monday - 12pm","Tuesday - 12pm","Wednesday - 12pm","Wednesday - 9pm","Wednesday - 6pm","Saturday - 12pm","Sunday - 12pm","Monday - 12pm","Thursday - 12pm","Friday - 12pm"])){
                     $index=0;
                 }
                 for($i=0; $i<$num; $i++){
@@ -51,6 +51,7 @@
                 } 
             }
             $total=calculate_price();
+            $_POST = array();
         }
     ?>
     <header>
@@ -193,7 +194,7 @@
         <div><button id='toggleWireframeCSS' onclick='toggleWireframe()'>Toggle Wireframe CSS</button></div>
     </footer>
 
-    <script src="script.js"></script>
+   
 </body>
 
 </html>
